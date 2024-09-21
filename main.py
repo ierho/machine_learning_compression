@@ -24,12 +24,12 @@ class Compression:
             comparison = compare_strs(p[0], pattern, self.max_spaces, self.space_char, self.space_chance)
             if comparison[0]:
                 self.patterns[n] = (p[0], p[1]+1)
+                not_found = len(comparison[1]) != 0
                 for char_num in comparison[1]:
                     t = list(self.patterns[n][0])
                     t[char_num] = self.space_char
                     t = ''.join(t)
                     self.patterns[n] = (t, self.patterns[n][1])
-                not_found = False
                 break
         if not_found:
             self.patterns.append((pattern, 0))
