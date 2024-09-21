@@ -42,8 +42,9 @@ class Compression:
         self.add_pattern(data)
         print(self.patterns)
 
-compression = Compression()
+if __name__ == "__main__":
+    compression = Compression()
 
-while True:
-    data = input("Data: ")
-    compression(data)
+    while True:
+        data = input("Data: ")
+        compression(data)
